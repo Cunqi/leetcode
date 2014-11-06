@@ -24,8 +24,12 @@ class Solution:
         return self.binarySearch(num, low, high)
         
     def binarySearch(self, num, low, high):
-        if low >= high:
-            return num[low]
+        
+        if low > high:
+            return num[high]
+        
+        if num[low] == num[high]:
+            return self.binarySearch(num, low + 1, high);
         
         mid = (low + high) / 2
         
@@ -40,6 +44,6 @@ class Solution:
         
             
 solution = Solution()
-data = [4, 5, 6, 7, 8, 2]
+data = [3, 4, 5, 6, 7, 8, 1, 3, 3, 3, 3, 3, 3]
 
 print(solution.findMin(data))
