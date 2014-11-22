@@ -5,7 +5,6 @@ Created on Nov 21, 2014
 '''
 from urllib import request
 from bs4 import BeautifulSoup
-from FinalMain import pictureDir
 class URLProcessor:
     pictureDir = "/Users/xiaocunqi/pictures/background/"
     #get Html of specific URL
@@ -68,4 +67,4 @@ class URLProcessor:
         return result
     
     def downloadPicture(self, url, fileName):
-        request.urlretrieve(url, pictureDir + fileName + ".jpg")
+        request.urlretrieve(url, self.pictureDir + fileName + ".jpg")
